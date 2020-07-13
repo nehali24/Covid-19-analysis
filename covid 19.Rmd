@@ -1,0 +1,150 @@
+---
+title: "covid19"
+author: "nehali"
+date: "03/07/2020"
+output: html_document
+---
+
+This analysis is based on the data set provided by datacamp, and the time span considered for this is 
+JAN 2020 - MAR 2020
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+library(ggplot2)
+library(dplyr)
+
+```
+
+```{r}
+ccw <- read_csv("confirmed_cases_worldwide.csv")
+ccw
+```
+
+
+
+
+```{r}
+ggplot(ccw, aes(date, cum_cases)) +
+         geom_line() +
+         ylab("Cumulative Confirmed Cases")
+```
+
+
+
+```{r}
+confirmed_cases_china_vs_rest_world <- read_csv("confirmed_cases_china_vs_world.csv")
+glimpse(confirmed_cases_china_vs_rest_world)
+
+```
+
+```{r}
+plot_confirmed_cases_china_vs_rest_world <- ggplot(confirmed_cases_china_vs_rest_world) +
+  geom_line(aes(date, cum_cases, group = is_china, color = is_china)) +
+  ylab("Cumulative Cases Confirmed")
+
+plot_confirmed_cases_china_vs_rest_world
+                                                     
+```
+
+
+
+
+
+
+```{r}
+who_events <- read.csv("who_events.csv")
+who_events
+```
+
+```{r}
+who_events <-   tribble(~ date, ~ event,
+                        
+"2020-01-30", "Global health\nemergency declared",
+  "2020-03-11", "Pandemic\ndeclared",
+  "2020-02-13", "China reporting\nchange") %>%
+  mutate(date = as.Date(date))
+
+plot_confirmed_cases_china_vs_rest_world +
+geom_vline(aes(xintercept = date), data = who_events, linetype = "dashed") +
+
+geom_text(aes(date,label = event), data = who_events, y = 1e5 )
+
+  
+```
+
+
+```{r}
+cases_in_china_after_15feb <- confirmed_cases_china_vs_rest_world %>%
+  filter(is_china == "China", date >= "2020-02-15")
+ggplot(cases_in_china_after_15feb, aes(date, cum_cases)) +
+  geom_line() +
+  geom_smooth(method = "lm", se = FALSE) +
+  ylab("Cumulative cases confirmed")
+``` 
+
+
+
+```{r}
+not_china <- confirmed_cases_china_vs_rest_world %>%
+  filter(is_china == "Not China")
+
+non_china_plot <- ggplot(not_china, aes(date, cum_cases)) +
+  geom_line() +
+  geom_smooth(method = "lm", se = FALSE) +
+  ylab("Cummulative cases confirmed")
+
+non_china_plot
+```
+
+
+```{r}
+non_china_plot +
+    scale_y_log10()
+```
+
+
+
+```{r}
+confirmed_cases_by_country <- read_csv("confirmed_cases_by_country.csv")
+confirmed_cases_by_country
+```
+
+```{r}
+glimpse(confirmed_cases_by_country)
+```
+
+```{r}
+top_10_countries_cases <- confirmed_cases_by_country %>%
+  group_by(country) %>%
+  summarise(total_cases = max(cum_cases)) %>%
+              top_n(10,total_cases)
+            top_10_countries_cases %>%
+              arrange(desc(total_cases))
+         
+```
+
+
+
+```{r}
+top_7_countries_cases_non_china <- read.csv("confirmed_cases_top7_outside_china.csv")
+top_7_countries_cases_non_china
+```
+
+
+```{r}
+glimpse(top_7_countries_cases_non_china)
+```
+
+```{r}
+ggplot(top_7_countries_cases_non_china, aes(x = cum_cases, y = date, color = country, group = country )) +
+  geom_line() +
+  
+  ylab("Cumulative Confirmed Cases")
+  
+```
+
