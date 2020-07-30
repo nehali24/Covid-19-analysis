@@ -4,7 +4,7 @@ When i plotted cumulative cases worldwide wrt date of cases being reported, i go
 
 When a comparison was made between China nad rest of the world we could see that till feb last week China had hit its peak and after that the curve started becoming flat. But for other countiries situtaion worsened. As after march 1st, cases grew exponentially and had shown no control.
 
-Some inportant dates that were being reported by WHO were 30th Jan 2020- Global Health emergency was declared, 13th Feb 2020- China started reporting and 11th march 2020, Coronavirus Outbreak was declared as Pandemic. So we could infer that after 11th March it grew drastically in other countries.
+Some important dates that were being reported by WHO were 30th Jan 2020- Global Health emergency was declared, 13th Feb 2020- China started reporting and 11th march 2020, Coronavirus Outbreak was declared as Pandemic. So we could infer that after 11th March it grew drastically in other countries.
 
 When we tried analysing number of cases in China after 15th feb, we could see growth curve getting flattened after March 10th while comparing it to countires other then China, it went exponnetially high.
 
