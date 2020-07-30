@@ -1,3 +1,7 @@
+![image](https://user-images.githubusercontent.com/60546284/88905061-c8b76b80-d24d-11ea-984d-39f759ad8aa6.png)
+
+
+
 # Covid-19-analysis
 This is a comparartive analysis expansion of Covid-19 in China and rest of the world, dataset has been acquired from Datacamp.
 When i plotted cumulative cases worldwide wrt date of cases being reported, i got to see that from mid jan to 12 or 13 of feb there was a constant increase in cases but there was a sudden dip in number of cases but after that cases went high exponentially. Beyond march 15th cases had reached to almost 200000.
