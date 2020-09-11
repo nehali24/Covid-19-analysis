@@ -14,3 +14,12 @@ When we tried analysing number of cases in China after 15th feb, we could see gr
 
 Talking baout the top 7 countries outside china those were hardest hit in the above duration are Italy, France, Germany, Iran, US, Spain, South Korea.
 
+![img1](https://user-images.githubusercontent.com/60546284/92948352-20eaab80-f451-11ea-98ae-bc69e9f52559.png)
+![img2](https://user-images.githubusercontent.com/60546284/92948367-2811b980-f451-11ea-8ecf-831d5cae20a3.png)
+![img3](https://user-images.githubusercontent.com/60546284/92948374-2cd66d80-f451-11ea-8a6a-dd435d4871ab.png)
+![img4](https://user-images.githubusercontent.com/60546284/92948383-3069f480-f451-11ea-9ddf-e8370ffad51a.png)
+![img5](https://user-images.githubusercontent.com/60546284/92948403-395ac600-f451-11ea-9c87-cdca3dfab540.png)
+![img6](https://user-images.githubusercontent.com/60546284/92948412-3cee4d00-f451-11ea-9ca0-0ee2a7013373.png)
+![img7](https://user-images.githubusercontent.com/60546284/92948419-3f50a700-f451-11ea-9c80-744121ebc475.png)
+
+
